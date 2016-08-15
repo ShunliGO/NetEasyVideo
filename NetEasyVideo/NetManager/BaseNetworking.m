@@ -1,0 +1,34 @@
+//
+//  BaseNetworking.m
+//  NetEasyVideo
+//
+//  Created by tarena on 16/7/22.
+//  Copyright © 2016年 yingxin. All rights reserved.
+//
+
+#import "BaseNetworking.h"
+
+@implementation BaseNetworking
++ (id)GET:(NSString *)path parameters:(NSDictionary *)parameters completionHandler:(void (^)(id, NSError *))completionHandler{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    return [manager GET:path parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", task.currentRequest.URL.absoluteString);
+        !completionHandler?:completionHandler(responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", task.currentRequest.URL.absoluteString);
+        NSLog(@"%@", error);
+        !completionHandler?:completionHandler(nil, error);
+    }];
+}
+@end
+
+
+
+
+
+
+
+
+
+
+

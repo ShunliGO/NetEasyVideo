@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  NetEasyVideo
+//
+//  Created by tarena on 16/7/22.
+//  Copyright © 2016年 yingxin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define MAS_SHORTHAND_GLOBALS
+#import <Masonry.h>
+
+#import <AFNetworking.h>
+#import <UIKit+AFNetworking.h>
+#import <YYKit.h>
+
+#import <MJRefresh.h>
+#import <UITableView+FDTemplateLayoutCell.h>
+
+#import "NSObject+Parse.h"
+#import "NSString+YX.h"
+#import "UIScrollView+Refresh.h"
+
+
+
+
+
+#endif /* PrefixHeader_pch */
